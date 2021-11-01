@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DetailInfoFragment"
+    android:layout_margin="@dimen/standard_margin">
+
+    <ImageView
+        android:id="@+id/detail_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/pokemon_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PIKACHU"
+        android:textSize="@dimen/item_title_text_size_stat"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/detail_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_height_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height: "
+        android:textSize="@dimen/standard_text_size"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/detail_image"
+        app:layout_constraintTop_toBottomOf="@+id/pokemon_name"
+        app:layout_constraintEnd_toStartOf="@+id/tv_height_pokemon_value"/>
+
+    <TextView
+        android:id="@+id/tv_height_pokemon_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textSize="@dimen/standard_text_size"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/tv_weight_pokemon"
+        app:layout_constraintTop_toBottomOf="@+id/pokemon_name"/>
+
+    <TextView
+        android:id="@+id/tv_weight_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight: "
+        android:textSize="@dimen/standard_text_size"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/detail_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_height_pokemon"
+        app:layout_constraintEnd_toStartOf="@+id/tv_weight_pokemon_value"/>
+
+    <TextView
+        android:id="@+id/tv_weight_pokemon_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:textSize="@dimen/standard_text_size"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/tv_weight_pokemon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_height_pokemon_value"/>
+
+    <TextView
+        android:id="@+id/tv_type_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type: "
+        android:textSize="@dimen/standard_text_size"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/detail_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight_pokemon"
+        app:layout_constraintEnd_toStartOf="@+id/tv_type_pokemon_value"/>
+
+    <TextView
+        android:id="@+id/tv_type_pokemon_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="beast"
+        android:textSize="@dimen/standard_text_size"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toEndOf="@+id/tv_type_pokemon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight_pokemon_value"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_hp_pokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HP"
+            android:textSize="@dimen/standard_text_size"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginBottom="@dimen/standard_margin"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hp_pokemon_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_hp_pokemon_value"
+            app:layout_constraintEnd_toEndOf="@+id/tv_hp_pokemon_value"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_hp_pokemon_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textSize="@dimen/standard_text_size"
+            android:maxLength="4"
+            app:layout_constraintTop_toTopOf="@+id/tv_attack_pokemon_value"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_attack_pokemon_value"/>
+
+        <TextView
+            android:id="@+id/tv_attack_pokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATK"
+            android:textSize="@dimen/standard_text_size"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginBottom="@dimen/standard_margin"
+            app:layout_constraintTop_toBottomOf="@+id/tv_attack_pokemon_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_attack_pokemon_value"
+            app:layout_constraintEnd_toEndOf="@+id/tv_attack_pokemon_value"/>
+
+        <TextView
+            android:id="@+id/tv_attack_pokemon_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:maxLength="4"
+            android:textSize="@dimen/standard_text_size"
+            android:layout_margin="@dimen/standard_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_defence_pokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEF"
+            android:textSize="@dimen/standard_text_size"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginBottom="@dimen/standard_margin"
+            app:layout_constraintTop_toBottomOf="@+id/tv_defence_pokemon_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_defence_pokemon_value"
+            app:layout_constraintEnd_toEndOf="@+id/tv_defence_pokemon_value"/>
+
+        <TextView
+            android:id="@+id/tv_defence_pokemon_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textSize="@dimen/standard_text_size"
+            android:maxLength="4"
+            app:layout_constraintTop_toTopOf="@+id/tv_attack_pokemon_value"
+            app:layout_constraintStart_toEndOf="@+id/tv_attack_pokemon_value"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
