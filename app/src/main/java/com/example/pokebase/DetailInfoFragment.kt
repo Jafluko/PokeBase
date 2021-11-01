@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
 import com.arellomobile.mvp.MvpAppCompatDialogFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -30,6 +32,8 @@ class DetailInfoFragment : MvpAppCompatDialogFragment(), PokemonView {
     private lateinit var pokeHp: TextView
     private lateinit var pokeAttack: TextView
     private lateinit var pokeDefence: TextView
+    private lateinit var pokeDetailsContainer: ConstraintLayout
+    private lateinit var pokePbLoad: ProgressBar
 
     override fun onStart() {
         super.onStart()
@@ -58,6 +62,8 @@ class DetailInfoFragment : MvpAppCompatDialogFragment(), PokemonView {
         pokeHp = view.findViewById(R.id.tv_hp_pokemon_value)
         pokeAttack = view.findViewById(R.id.tv_attack_pokemon_value)
         pokeDefence = view.findViewById(R.id.tv_defence_pokemon_value)
+        pokeDetailsContainer = view.findViewById(R.id.details_container)
+        pokePbLoad = view.findViewById(R.id.pb_load)
 
         presenter.getPokemon(requireArguments().getSerializable("id") as Int)
     }
@@ -85,5 +91,8 @@ class DetailInfoFragment : MvpAppCompatDialogFragment(), PokemonView {
         pokeAttack.text = pokemon.stats[1].baseStat.toString()
         pokeDefence.text = pokemon.stats[2].baseStat.toString()
         pokeType.text = pokemon.types[0].type.name
+
+        pokeDetailsContainer.visibility = View.VISIBLE
+        pokePbLoad.visibility = View.GONE
     }
 }
